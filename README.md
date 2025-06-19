@@ -1,7 +1,7 @@
 # ROCK-PAPER-SCISSORS-GAME
 
 ## Table of Contents
-[Project Description](#Project Description)
+- [Project Description](#Project Description)
 How to Play
 Running the Game
 Code Explanation
