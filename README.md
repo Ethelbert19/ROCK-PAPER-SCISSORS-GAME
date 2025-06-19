@@ -23,3 +23,58 @@ This is a simple command-line Rock-Paper-Scissors game written in Python. The ga
 ### Running the Game
 To play the game, you need Python installed on your system. Save the code in a file named rock_paper_scissors.py and run it using the following command:
   - python rock_paper_scissors.py
+  - 
+### Code Explanation
+Full Code
+Here is the complete Python script for the Rock-Paper-Scissors game:
+            import random
+
+            def get_user_choice():
+                while True:
+                    user = input("Enter Rock/Paper/Scissors or Q to Quit: ").capitalize()
+                    if user == 'Q':
+                        return 'quit'
+                    elif user in ["Rock", "Paper", "Scissors"]:
+                        return user
+                    else:
+                        print("Invalid choice. Please enter Rock, Paper, Scissors, or Q.")
+            
+            def get_computer_choice():
+                return random.choice(["Rock", "Paper", "Scissors"])
+            
+            def determine_winner(user, computer):
+                if user == computer:
+                    return 'tie'
+                elif (user == "Rock" and computer == "Scissors") or \
+                     (user == "Paper" and computer == "Rock") or \
+                     (user == "Scissors" and computer == "Paper"):
+                    return 'user'
+                else:
+                    return 'computer'
+            
+            user_score = 0
+            computer_score = 0
+            while True:
+                user = get_user_choice()
+                if user == 'quit':
+                    break
+                computer = get_computer_choice()
+                print(f"Computer chose {computer}")
+                result = determine_winner(user, computer)
+                if result == 'user':
+                    print("You win")
+                    user_score += 1
+                elif result == 'computer':
+                    print("Computer wins")
+                    computer_score += 1
+                else:
+                    print("It's a tie")
+            
+            print(f"user won {user_score} time(s)")
+            print(f"computer won {computer_score} time(s)")
+            if user_score > computer_score:
+                print("The overall winner is user")
+            elif computer_score > user_score:
+                print("The overall winner is computer")
+            else:
+                print("No winner")
