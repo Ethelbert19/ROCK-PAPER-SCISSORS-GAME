@@ -203,7 +203,7 @@ If neither won, it’s a tie.
 - Line 42: print("It's a tie")
 Prints a tie message.
 
-####Final Results
+#### Final Results
 
 - Line 44: print(f"user won {user_score} time(s)")
 Prints the user’s total wins.
